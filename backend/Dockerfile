@@ -19,7 +19,7 @@ RUN apk add --no-cache \
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci --only=production && npm cache clean --force
+RUN npm i && npm cache clean --force
 
 # Stage 2: Production image
 FROM node:18-alpine AS production
